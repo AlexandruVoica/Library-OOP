@@ -2,7 +2,7 @@ import convertAmountToString from './library.js';
 
 class Media {
 
-  constructor(title, author, type) {
+  constructor (title, author, type) {
     this._title = title;
     // author or director or editor
     this._author = author;
@@ -14,15 +14,15 @@ class Media {
     _ratings = [];
   }
 
-  get title() {
+  get title () {
     return this._title;
   }
 
-  get author() {
+  get author () {
     return this._author;
   }
 
-  get type() {
+  get type () {
     return this._type;
   }
 
@@ -35,11 +35,11 @@ class Media {
   //   }
   // }
 
-  get status() {
+  get status () {
     return this._isCheckedOut;
   }
 
-  get ratings() {
+  get ratings () {
     return ratings;
   }
 
@@ -48,13 +48,13 @@ class Media {
 
 class Book extends Media {
 
-  constructor(title, author, pages, category) {
+  constructor (title, author, pages, category) {
     super(title, author, 'Book');
     this._pages = pages;
     this._category = category;
   }
 
-  get pages() {
+  get pages () {
     return `${this._pages} pages`
   }
 
@@ -63,16 +63,29 @@ class Book extends Media {
 
 class Movie extends Media {
 
-  constructor(title, director, length) {
+  constructor (title, director, length) {
     super(title,director, 'Movie');
     // the length should be introduced as a decimal number of hours
     this._length = length;
   }
 
-  get length() {
+  get length () {
+    // if it is a short film, the length should be less than 1 hour
+    // in this case the length should be displayed like this 28m 30s
     if (this._length < 1) {
+      return convertAmountToString(this._length, 'm', 's');
+    } else {
+      // if it is a feature film, the length should be more than 1h 20m
       return convertAmountToString(this._length, 'h', 'm');
     }
+  }
+
+}
+
+class Article extends Media {
+
+  constructor () {
+
   }
 
 }
