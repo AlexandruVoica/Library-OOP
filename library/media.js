@@ -6,7 +6,7 @@ class Media {
     this._title = title;
     // author or director or editor
     this._author = author;
-
+    this._type = type;
     // size is a general term for the dimension of the media
     // in the case of hours,
     // in the case of characters (articles), the size should be a multiple of 100 (rounded down)
@@ -60,6 +60,13 @@ class Book extends Media {
 
 }
 
+class BookCopy {
+
+  constructor () {
+
+  }
+
+}
 
 class Movie extends Media {
 
@@ -83,6 +90,14 @@ class Movie extends Media {
 }
 
 class Article extends Media {
+
+  constructor () {
+
+  }
+
+}
+
+class Thesis extends Media {
 
   constructor () {
 
