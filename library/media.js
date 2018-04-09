@@ -26,15 +26,6 @@ class Media {
     return this._type;
   }
 
-  // get size() {
-  //   switch (this._unitsOfSize) {
-  //     case 'hours': return convertHoursToString(this._size); break;
-  //     case 'minutes': return `${this._size} minutes`; break;
-  //     case 'characters': return `${this._size - (this._size % 100)} characters`; break;
-  //     case 'pages': return `${this._size} pages`; break;
-  //   }
-  // }
-
   get status () {
     return this._isCheckedOut;
   }
@@ -55,15 +46,16 @@ class Book extends Media {
   }
 
   get pages () {
-    return `${this._pages} pages`
+    return `${this._pages} pages`;
   }
 
 }
 
+// If there are multiple copies of the same title, each copy will be stored as a separate object
 class BookCopy {
 
-  constructor () {
-
+  constructor (bookObjectReference) {
+    this._reference = bookObjectReference;
   }
 
 }
@@ -91,16 +83,62 @@ class Movie extends Media {
 
 class Article extends Media {
 
-  constructor () {
+  constructor (title, author, size, publisher, keywords) {
+    super(title, author, 'Article');
+    this._size = size;
+    // the publisher can be outside of the university
+    // if the publisher is the university, then this field will reference the department or faculty
+    this._publisher = publisher;
+    this._keywords = keywords;
+  }
 
+  get size () {
+    // the size of articles should be specified in 'characters'
+    // preferably, the size should be displayed as a multiple of 100 (ie. 3600, 5500...)
+    return `${this._size - (this._size % 100)} characters`;
+  }
+
+  get publisher () {
+    return _publisher;
+  }
+
+  get keywords() {
+    // this getter has the objective of just listing the keywords
+    // just returning the _keywords array would return the reference to it
+    // to prevent returning the reference, a deep copy (the array is supposed to contain string literals) will be provided
+    // TODO: check if garbage control works accordingly in this scenario
+    let temporaryArray = _keywords.slice();
+    return temporaryArray;
   }
 
 }
 
 class Thesis extends Media {
 
-  constructor () {
+  constructor (title, author, size, coordinator, department, keywords) {
+    super(title, author, 'Thesis');
+    this._size = size;
+    this._coordinator = coordinator;
+    this._department = department;
+    this._keywords = keywords;
+  }
 
+  get pages () {
+    return `${this._pages} pages`;
+  }
+
+  get coordinator () {
+    return this._coordinator;
+  }
+
+  get department () {
+    return this._department;
+  }
+
+  get keywords() {
+    // for additional info, check Article.keywords
+    let temporaryArray = _keywords.slice();
+    return temporaryArray;
   }
 
 }
