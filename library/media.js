@@ -2,10 +2,10 @@ import convertAmountToString from './library.js';
 
 class Media {
 
-  constructor (title, author, type) {
+  constructor (title, authors, type) {
     this._title = title;
     // author or director or editor
-    this._author = author;
+    this._authors = authors;
     this._type = type;
     // size is a general term for the dimension of the media
     // in the case of hours,
@@ -18,8 +18,10 @@ class Media {
     return this._title;
   }
 
-  get author () {
-    return this._author;
+  get authors () {
+    // for additional info, check Article.keywords
+    let temporaryArray = _authors.slice();
+    return this.temporaryArray;
   }
 
   get type () {
@@ -39,8 +41,8 @@ class Media {
 
 class Book extends Media {
 
-  constructor (title, author, pages, category) {
-    super(title, author, 'Book');
+  constructor (title, authors, pages, category) {
+    super(title, authors, 'Book');
     this._pages = pages;
     this._category = category;
   }
@@ -63,7 +65,8 @@ class BookCopy {
 class Movie extends Media {
 
   constructor (title, director, length) {
-    super(title,director, 'Movie');
+    // a movie should have only one director
+    super(title, director, 'Movie');
     // the length should be introduced as a decimal number of hours
     this._length = length;
   }
@@ -83,8 +86,8 @@ class Movie extends Media {
 
 class Article extends Media {
 
-  constructor (title, author, size, publisher, keywords) {
-    super(title, author, 'Article');
+  constructor (title, authors, size, publisher, keywords) {
+    super(title, authors, 'Article');
     this._size = size;
     // the publisher can be outside of the university
     // if the publisher is the university, then this field will reference the department or faculty
@@ -116,6 +119,7 @@ class Article extends Media {
 class Thesis extends Media {
 
   constructor (title, author, size, coordinator, department, keywords) {
+    // each individual thesis should have only one author
     super(title, author, 'Thesis');
     this._size = size;
     this._coordinator = coordinator;
