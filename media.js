@@ -147,9 +147,11 @@ class Thesis extends Media {
 
 }
 
-// export default Media;
-// export default Book;
-// export default BookCopy;
-// export default Movie;
-// export default Article;
-// export default Thesis;
+export {
+	Media,
+	Book,
+	BookCopy,
+	Movie,
+	Article,
+	Thesis
+};

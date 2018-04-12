@@ -9,8 +9,7 @@
     },
     "rules": {
         "indent": [
-            "error",
-            "tab"
+            0
         ],
         "linebreak-style": [
             "error",
