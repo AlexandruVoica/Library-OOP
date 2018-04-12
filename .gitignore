@@ -1,3 +1,4 @@
 info.txt
 node_modules
 dev tests workspace.code-workspace
+package-lock.json
