@@ -1,6 +1,9 @@
 class User {
 
-  constructor () {
+  constructor (name, birthday, role) {
+    this._name = name;
+    this._birthday = birthday;
+    this._role = role;
     // name
     // birthday
     // book loaned
@@ -9,6 +12,44 @@ class User {
     // role: student, visitor, librarian
   }
 
+  get name () {
+    return this._name;
+  }
+
+  get birthday () {
+    return this._birthday;
+  }
+
+
+
 }
 
-export default User;
+class Librarian extends User {
+
+  constructor (name, birthday) {
+    super (name, birthday, 'ADMIN');
+  }
+
+}
+
+class Student extends User {
+
+  constructor (name, birthday) {
+    super (name, birthday, 'STUDENT');
+  }
+
+}
+
+class Visitor extends User {
+
+  constructor (name) {
+    super (name, '', 'VISITOR');
+  }
+
+}
+
+export {
+  Librarian,
+  Student,
+  Visitor
+};

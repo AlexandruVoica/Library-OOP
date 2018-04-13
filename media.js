@@ -10,8 +10,8 @@ class Media {
 		// size is a general term for the dimension of the media
 		// in the case of hours,
 		// in the case of characters (articles), the size should be a multiple of 100 (rounded down)
-		let _isCheckedOut = false;
-		let _ratings = [];
+		this._isCheckedOut = false;
+		this._ratings = [];
 	}
 
 	get title () {
@@ -42,7 +42,7 @@ class Media {
 class Book extends Media {
 
 	constructor (title, authors, pages, category) {
-		super(title, authors, 'Book');
+		super (title, authors, 'Book');
 		this._pages = pages;
 		this._category = category;
 	}
@@ -66,7 +66,7 @@ class Movie extends Media {
 
 	constructor (title, director, length) {
 		// a movie should have only one director
-		super(title, director, 'Movie');
+		super (title, director, 'Movie');
 		// the length should be introduced as a decimal number of hours
 		this._length = length;
 	}
@@ -87,7 +87,7 @@ class Movie extends Media {
 class Article extends Media {
 
 	constructor (title, authors, size, publisher, keywords) {
-		super(title, authors, 'Article');
+		super (title, authors, 'Article');
 		this._size = size;
 		// the publisher can be outside of the university
 		// if the publisher is the university, then this field will reference the department or faculty
@@ -120,7 +120,7 @@ class Thesis extends Media {
 
 	constructor (title, author, size, coordinator, department, keywords) {
 		// each individual thesis should have only one author
-		super(title, author, 'Thesis');
+		super (title, author, 'Thesis');
 		this._size = size;
 		this._coordinator = coordinator;
 		this._department = department;
@@ -148,7 +148,6 @@ class Thesis extends Media {
 }
 
 export {
-	Media,
 	Book,
 	BookCopy,
 	Movie,
