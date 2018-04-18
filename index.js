@@ -12,7 +12,8 @@ import { Book, BookCopy, Movie, Article, Thesis } from './media';
 import { Librarian, Student, Visitor } from './users';
 
 // Librarian (name, birthday)
-// Student (name, birthday)
+// Student (name, birthday, department)
+// Professor (name, birthday, department)
 // Visitor (name)
 
 let mediaArray = [];
