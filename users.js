@@ -14,8 +14,6 @@ class User {
     return this._birthday;
   }
 
-
-
 }
 
 class Librarian extends User {
@@ -28,16 +26,39 @@ class Librarian extends User {
 
 class Student extends User {
 
-  constructor (name, birthday) {
+  constructor (name, birthday, department) {
     super (name, birthday, 'STUDENT');
+    this._department = department;
+  }
+
+  get department () {
+    return this._department;
+  }
+
+}
+
+class Professor extends User {
+
+  constructor (name, birthday, department) {
+    super (name, birthday, 'PROFESSOR');
+    this._department = department;
+  }
+
+  get department () {
+    return this._department;
   }
 
 }
 
 class Visitor extends User {
 
-  constructor (name) {
+  constructor (name, dateOfVisit) {
     super (name, '', 'VISITOR');
+    this._dateOfVisit = dateOfVisit;
+  }
+
+  get dateOfvisit () {
+    return this._dateOfVisit;
   }
 
 }
@@ -45,5 +66,6 @@ class Visitor extends User {
 export {
   Librarian,
   Student,
+  Professor,
   Visitor
 };
