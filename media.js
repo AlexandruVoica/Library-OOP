@@ -67,7 +67,7 @@ class Movie extends Media {
 	constructor (title, director, length) {
 		// a movie should have only one director
 		super (title, director, 'Movie');
-		// the length should be introduced as a decimal number of hours
+		// the length should be given as a decimal number of hours
 		this._length = length;
 	}
 
