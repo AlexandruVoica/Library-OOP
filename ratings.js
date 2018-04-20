@@ -1,9 +1,11 @@
-class rating {
+class Rating {
 
   constructor (user, grade, comment) {
+    // user holds an object reference
     this._user = user;
     // grades are given as an integer value from 0 to 5
     this._grade = grade;
+    // comment holds a string
     this._comment = comment;
   }
 
@@ -20,3 +22,7 @@ class rating {
   }
 
 }
+
+export {
+  Rating
+};

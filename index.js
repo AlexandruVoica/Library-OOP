@@ -16,7 +16,12 @@ import { Librarian, Student, Visitor } from './users';
 // Professor (name, birthday, department)
 // Visitor (name)
 
+import Rating from './ratings';
+
+// Rating (user, grade, comment)
+
 let mediaArray = [];
 let usersArray = [];
+let ratingsArray = [];
 
 
