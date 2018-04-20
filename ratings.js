@@ -7,4 +7,16 @@ class rating {
     this._comment = comment;
   }
 
+  get user () {
+    return this._user;
+  }
+
+  get grade () {
+    return this._grade;
+  }
+
+  get comment () {
+    return this._comment;
+  }
+
 }
