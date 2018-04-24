@@ -20,8 +20,17 @@ import Rating from './ratings';
 
 // Rating (user, grade, comment)
 
+import Checkout from './checkouts';
+
+// Checkout (media, user)
+  // a Checkout also has the following properties: loanDate, dueDate, returnDate
+  // loanDate is set to the date the Checkout instance is created
+  // dueDate is calculated as loanDate + 2 weeks
+  // in order to signal that the media has been returned, call checkoutInstance.mediaHasBeenReturned() and the returnDate will be created
+
 let mediaArray = [];
 let usersArray = [];
 let ratingsArray = [];
+let checkoutsArray = [];
 
 

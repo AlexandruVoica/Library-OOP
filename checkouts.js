@@ -32,4 +32,13 @@ class Checkout {
   mediaHasBeenReturned () {
     this._returnDate = new Date();
   }
+
+  isOverdue () {
+    let currentDateOfChecking = new Date();
+    return (currentDateOfChecking > this._dueDate);
+  }
 }
+
+export {
+  Checkout
+};
