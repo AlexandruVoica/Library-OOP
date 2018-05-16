@@ -3,3 +3,5 @@ node_modules
 dev tests workspace.code-workspace
 package-lock.json
 package.json
+.vscode
+.eslintrc.json

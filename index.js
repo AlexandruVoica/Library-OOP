@@ -2,7 +2,6 @@
 // Create a class system that emulates a library that holds multiple types of media
 
 import { Book, BookCopy, Movie, Article, Thesis } from './media';
-
 // Book (title, authorsArray, pages, category)
 // BookCopy (bookObjectReference)
 // Movie (title, director, length)
@@ -10,18 +9,15 @@ import { Book, BookCopy, Movie, Article, Thesis } from './media';
 // Thesis (title, author, size, coordinator, department, keywords)
 
 import { Librarian, Student, Visitor } from './users';
-
 // Librarian (name, birthday)
 // Student (name, birthday, department)
 // Professor (name, birthday, department)
 // Visitor (name)
 
 import Rating from './ratings';
-
 // Rating (user, grade, comment)
 
 import Checkout from './checkouts';
-
 // Checkout (media, user)
   // a Checkout also has the following properties: loanDate, dueDate, returnDate
   // loanDate is set to the date the Checkout instance is created
